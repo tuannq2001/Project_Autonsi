@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class DangNhap extends Controller
 {
+    public function main()
+    {
+        if(Auth()->check())
+        {
+         
+         
+        }
+        else
+        return view('welcome');
+    }
     public function xuLyDangNhap(DangNhapRequest $request)
     {
         if (Auth::attempt(['name' => $request->username, 'password' => $request->password])) {

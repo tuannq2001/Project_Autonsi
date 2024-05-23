@@ -7,7 +7,8 @@ Route::get('/', function () {
 
 });
 
-Route::post('/welcome',[DangNhap::class, 'xuLyDangNhap'])->name('xl-dang-nhap');
+Route::post('/homepage',[DangNhap::class, 'xuLyDangNhap'])->name('xl-dang-nhap');
+Route::get('/homepage',[DangNhap::class, 'main'])->name('homepage');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
