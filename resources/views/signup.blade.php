@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login - SB Admin</title>
+        <title>Sign Up - SB Admin</title>
         <link rel="stylesheet" href="{{asset('main.css')}}">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -18,20 +18,36 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                    <ul>
+                                    @foreach($errors->all() as $error)
+                                    <li>{{$error }}</li>
+                                    @endforeach
+                                    </ul>
+                                    </div>
+                                @endif
                                     <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
                                     <div class="card-body">
-                                        <form role="form" action="{{route('xl-dang-nhap')}}" method="POST">
+                                        <form role="form" action="{{route('xl-dang-ki')}}" method="POST">
                                             @csrf
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" name="username" type="text" placeholder="name@example.com" />
-                                                <label for="inputEmail">Email address</label>
+                                                <label for="inputEmail">Tên đăng nhập</label>
                                             </div>
                                             <div class="form-floating mb-3">
-                                                <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Password" />
-                                                <label for="inputPassword">Password</label>
+                                                <input class="form-control" id="inputEmail" name="email" type="text" placeholder="name@example.com" />
+                                                <label for="inputEmail">Email</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Mật khẩu" />
+                                                <label for="inputPassword">Mật khẩu</label>
+                                            </div><div class="form-floating mb-3">
+                                                <input class="form-control" id="inputRePassword" name="repassword" type="password" placeholder="Nhập lại mật khẩu" />
+                                                <label for="inputRePassword">Nhập lại mật khẩu</label>
                                             </div>
                                             <div class="form-check mb-3">
-                                                <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
+                                                <input class="form-check-input" id="inputRememberPassword"  type="checkbox" value="" />
                                                 <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
                                             </div>
                                             <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
@@ -41,7 +57,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="{{route('dang-ki')}}">Need an account? Sign up!</a></div>
+                                        <div class="small"><a href="{{route('homepage')}}">Đăng nhập</a></div>
                                     </div>
                                 </div>
                             </div>
