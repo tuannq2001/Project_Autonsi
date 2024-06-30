@@ -41,8 +41,8 @@
                         <button id="openDialog" class="btn btn-outline-success my-2 my-sm-0" type="submit" style="margin-right: 10px;">Thêm</button>
                         <div id="dialogOverlay" class="dialog-overlay"></div>
                         <div id="dialog" class="dialog">
-                            <button  style="float: right" id="closeDialog">Close</button>
-                            <h2>Thêm sản phẩm</h2>
+                            <button  style="float: right" id="closeDialog">X</button>
+                            <h2 class="text-center">THÊM SẢN PHẨM</h2>
                             <form action="{{route('xl-them-san-pham')}}" method="post" role="form" class="contactForm" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
@@ -61,7 +61,7 @@
                                     <label for="exampleInputEmail1">Ghi chú</label>
                                     <input type="text" class="form-control" id="description" name="productdescription"  placeholder="Ghi chú">
                                   </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Tạo</button>
                               </form>
 
                         </div>

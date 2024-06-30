@@ -32,11 +32,11 @@ class DangNhap extends Controller
             }
             elseif(auth()->user()->role_id==2)
              {
-                    
+
              }
              else{
                 return view('homepage');
-             }     
+             }
               }
         return back()->withErrors(['failed'=>"Vui lòng kiểm tra lại Username/password"]);
     }
@@ -44,7 +44,7 @@ class DangNhap extends Controller
     {
         Auth::logout();
         return redirect()->route('dang-nhap');
-    }   
+    }
 
     public function dangKi()
     {
@@ -66,8 +66,8 @@ class DangNhap extends Controller
         else
         {
             return back()->withErrors(['failed'=>"Mật khẩu không trùng khớp!!!!!"]);
-        }  
+        }
     }
 
-    
+
 }

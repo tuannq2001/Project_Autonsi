@@ -6,10 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Sign Up - SB Admin</title>
+        <title>Đăng ký</title>
         <link rel="stylesheet" href="{{asset('main.css')}}">
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
+
     <body class="bg-primary">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
@@ -27,7 +28,7 @@
                                     </ul>
                                     </div>
                                 @endif
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">ĐĂNG KÝ</h3></div>
                                     <div class="card-body">
                                         <form role="form" action="{{route('xl-dang-ki')}}" method="POST">
                                             @csrf
@@ -37,23 +38,33 @@
                                             </div>
                                             <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputEmail" name="email" type="text" placeholder="name@example.com" />
-                                                <label for="inputEmail">Email</label>
+                                                <label for="inputEmail">Địa chỉ Email</label>
                                             </div>
-                                            <div class="form-floating mb-3">
+                                            {{-- <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Mật khẩu" />
                                                 <label for="inputPassword">Mật khẩu</label>
-                                            </div><div class="form-floating mb-3">
+
+
+                                            </div> --}}
+                                            <div class="form-floating mb-3 position-relative">
+                                                <input class="form-control" id="inputPassword" name="password" type="password" placeholder="Mật khẩu" />
+                                                <label for="inputPassword">Mật khẩu</label>
+                                                <span id="togglePassword" class="toggle-password">
+                                                    <i class="fas fa-eye-slash" aria-hidden="true"></i>
+                                                </span>
+                                            </div>
+                                            <div class="form-floating mb-3">
                                                 <input class="form-control" id="inputRePassword" name="repassword" type="password" placeholder="Nhập lại mật khẩu" />
                                                 <label for="inputRePassword">Nhập lại mật khẩu</label>
                                             </div>
                                             <div class="form-check mb-3">
                                                 <input class="form-check-input" id="inputRememberPassword"  type="checkbox" value="" />
-                                                <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
+                                                <label class="form-check-label" for="inputRememberPassword">Nhớ mật khẩu</label>
                                             </div>
-                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                                <a class="small" href="password.html">Forgot Password?</a>
-                                                <button type="submit"  class="btn btn-primary" href="index.html">Login</button>
+                                            <div style="text-align: center;">
+                                                <button type="submit" class="btn btn-primary" href="index.html">Đăng ký</button>
                                             </div>
+
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
@@ -69,7 +80,7 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div class="text-muted"> &copy; AutonSI</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
