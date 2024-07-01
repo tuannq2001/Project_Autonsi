@@ -12,13 +12,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('order_details', function (Blueprint $table) {
-            $table->id('ODE_ID');
+            $table->id('ODE_ID')->primary();
             $table->foreignId('ODE_ORQID')->constrained('orders', 'ORD_ID');
             $table->foreignId('ODE_PROID')->constrained('products', 'PRO_ID');
             $table->integer('ODE_Quantity');
             $table->decimal('ODE_UnitPrice', 10, 2);
             $table->decimal('ODE_Total', 10, 2);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     

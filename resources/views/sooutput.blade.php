@@ -61,12 +61,12 @@
                                     <label for="exampleInputEmail1">Ghi chú</label>
                                     <input type="text" class="form-control" id="description" name="productdescription"  placeholder="Ghi chú">
                                   </div>
-                               <button type="submit" class="btn btn-primary">Tạo</button>
-                                </form>
+                                <a href="{{route('tim-san-pham') }}"><button type="submit" class="btn btn-primary">Tạo</button></a>
+                              </form>
+
                         </div>
-                        <form action="{{route('tim-san-pham')}}" class="form-inline my-2 my-lg-0">
-                            @csrf
-                            <input class="form-control mr-sm-2" placeholder="Search" name="search" aria-label="Search">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                           </form>
                         </ul>
@@ -95,12 +95,12 @@
                                 </tr>
                             </tfoot>
                             <tbody>
-                              @forelse($sanpham as $sp)
+                              @forelse($xuatkho as $xk)
                               <tr>
-                                  <td>{{ $sp->PRO_Code}}</td>
-                                  <td>{{ $sp->PRO_Name}}</td>
-                                  <td>{{ $sp->PRO_Price}}</td>
-                                  <td><a href="{{route('xoa-san-pham',['id' => $sp->PRO_ID]) }}">Chi tiết </a><a href="{{route('xoa-san-pham',['id' => $sp->PRO_ID]) }}">Xóa</a></td>
+                                  <td>{{ $xk->SOO_Code}}</td>
+                                  <td>{{ $xk->SOO_CreateDate}}</td>
+                                  <td>{{ $xk->SOO_Date}}</td>
+                                  <td><a href="{{route('xoa-san-pham',['id' => $xk->SOO_ID]) }}">Chi tiết </a><a href="{{route('xoa-san-pham',['id' => $xk->SOO_ID]) }}">Xóa</a></td>
                               </tr>
                               @empty
                               @endforelse

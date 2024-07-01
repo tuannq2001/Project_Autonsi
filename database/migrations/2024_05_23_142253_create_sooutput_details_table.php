@@ -12,7 +12,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sooutput_details', function (Blueprint $table) {
-            $table->id('SOD_ID');
+            $table->id('SOD_ID')->primary();
             $table->foreignId('SOD_SOOID')->constrained('sooutputs', 'SOO_ID');
             $table->foreignId('SOD_PROID')->constrained('products', 'PRO_ID');
             $table->integer('SOD_Quantity');
@@ -20,6 +20,7 @@ return new class extends Migration
             $table->decimal('SOD_Total', 10, 2);
             $table->text('SOD_Note')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     

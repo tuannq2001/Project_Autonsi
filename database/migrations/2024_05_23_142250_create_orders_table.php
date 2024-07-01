@@ -12,13 +12,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->id('ORD_ID');
+            $table->id('ORD_ID')->primary();
             $table->string('ORD_Code', 50);
             $table->foreignId('ORD_CUSID')->constrained('customers', 'CUS_ID');
             $table->date('ORD_CreateDate');
             $table->integer('ORD_USRID');
             $table->text('ORD_Description')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     

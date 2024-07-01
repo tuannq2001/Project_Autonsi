@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DangNhap;
 use App\Http\Controllers\SanPhamController;
+use App\Http\Controllers\KhoController;
+
 use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
@@ -21,4 +23,8 @@ Route::get('/product',[SanPhamController::class, 'layDanhSachSanPham'])->name('s
 Route::post('/addproduct',[SanPhamController::class, 'xuLyThemSanPham'])->name('xl-them-san-pham');
 Route::get('deleteproduct/{id}',[SanPhamController::class, 'xoaSanPham'])->name('xoa-san-pham');
 Route::get('tim-san-pham',[SanPhamController::class, 'timSanPham'])->name('tim-san-pham');
+//Nhập kho
+Route::get('/poinputs',[KhoController::class, 'layDanhSachNhapKho'])->name('nhap-kho');
+//Xuất Kho
+Route::get('/sooutputs',[KhoController::class, 'layDanhSachXuatKho'])->name('xuat-kho');
 

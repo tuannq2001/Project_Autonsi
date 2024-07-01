@@ -12,7 +12,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('poinput_details', function (Blueprint $table) {
-            $table->id('PID_ID');
+            $table->id('PID_ID')->primary();
             $table->foreignId('PID_POIID')->constrained('poinputs', 'POI_ID');
             $table->foreignId('PID_PROID')->constrained('products', 'PRO_ID');
             $table->integer('PID_Quantity');
@@ -20,6 +20,7 @@ return new class extends Migration
             $table->decimal('PID_Total', 10, 2);
             $table->text('PID_Note')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     

@@ -9,7 +9,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->id('CUS_ID');
+            $table->id('CUS_ID')->primary();
             $table->string('CUS_Code', 50);
             $table->string('CUS_Name', 100);
             $table->string('CUS_Phone', 20);
@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('CUS_CreateDate');
             $table->integer('CUS_CreateUserID');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     

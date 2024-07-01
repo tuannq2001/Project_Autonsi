@@ -12,13 +12,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sooutputs', function (Blueprint $table) {
-            $table->id('SOO_ID');
+            $table->id('SOO_ID')->primary();
             $table->string('SOO_Code', 50);
             $table->integer('SOO_USRID');
             $table->date('SOO_CreateDate');
             $table->foreignId('SOO_CUSID')->constrained('customers', 'CUS_ID');
             $table->date('SOO_Date');
+            $table->double('SOO_Total')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     

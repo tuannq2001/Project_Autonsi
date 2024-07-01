@@ -12,12 +12,13 @@ return new class extends Migration
     public function up()
     {
         Schema::create('vendors', function (Blueprint $table) {
-            $table->id('VEN_ID');
+            $table->id('VEN_ID')->primary();
             $table->string('VEN_Name', 100);
             $table->string('VEN_Code', 50);
             $table->string('VEN_Address', 255);
             $table->string('VEN_Phone', 20);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     

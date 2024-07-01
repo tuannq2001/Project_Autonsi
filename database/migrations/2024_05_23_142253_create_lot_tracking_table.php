@@ -12,10 +12,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('lot_tracking', function (Blueprint $table) {
-            $table->id('LOT_ID');
+            $table->id('LOT_ID')->primary();
             $table->foreignId('LOT_PROID')->constrained('products', 'PRO_ID');
             $table->foreignId('PID_POID')->constrained('poinput_details', 'PID_ID');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
     
