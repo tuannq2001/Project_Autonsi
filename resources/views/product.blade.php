@@ -61,12 +61,12 @@
                                     <label for="exampleInputEmail1">Ghi chú</label>
                                     <input type="text" class="form-control" id="description" name="productdescription"  placeholder="Ghi chú">
                                   </div>
-                                <button type="submit" class="btn btn-primary">Tạo</button>
+                                <a href="{{route('tim-san-pham') }}"><button type="submit" class="btn btn-primary">Tạo</button></a>
                               </form>
 
                         </div>
                         <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                           </form>
                         </ul>

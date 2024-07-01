@@ -28,16 +28,8 @@ class SanPhamController extends Controller
     }
     public function timSanPham(Request $request)
     {
-        $sp= new SanPham();
-
-       $sp->PRO_Name=$request->productname;
-       $sp->PRO_Code=$request->productcode;
-       $sp->PRO_CreateDate= now();
-       $sp->PRO_Status= 1;
-       $sp->PRO_Price= $request->productprice;
-       $sp->PRO_Description= $request->productdescription;
-       $sp->save();
-        return back()->withErrors(['success'=>"Thêm sản phẩm thành công"]);
+        $sanpham= SanPham::where('PRO_Name','like','%'.$request->search.'%')->get();
+        return view('product',compact('sanpham'));
     }
     public function layDanhSachSanPham()
     {
