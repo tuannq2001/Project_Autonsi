@@ -26,6 +26,19 @@ class SanPhamController extends Controller
        $sp->save();
         return back()->withErrors(['success'=>"Thêm sản phẩm thành công"]);
     }
+    public function timSanPham(Request $request)
+    {
+        $sp= new SanPham();
+
+       $sp->PRO_Name=$request->productname;
+       $sp->PRO_Code=$request->productcode;
+       $sp->PRO_CreateDate= now();
+       $sp->PRO_Status= 1;
+       $sp->PRO_Price= $request->productprice;
+       $sp->PRO_Description= $request->productdescription;
+       $sp->save();
+        return back()->withErrors(['success'=>"Thêm sản phẩm thành công"]);
+    }
     public function layDanhSachSanPham()
     {
         $sanpham=SanPham::all();
